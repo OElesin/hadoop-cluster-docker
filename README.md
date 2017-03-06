@@ -28,7 +28,15 @@ git clone https://github.com/oelesin/hadoop-cluster-docker
 sudo docker network create --driver=bridge hadoop
 ```
 
-#####4. start container
+#####4. create hdfs mount directory on Docker Host machine
+```
+sudo mkdir /data/hadoop_docker
+sudo chmod -R 777 /data/hadoop_docker
+```
+The step above ensures that your hadoop data is persisted on the host machine. Hence, data is no longer lost when you shutdown the docker images
+
+
+#####5. start container
 
 ```
 cd hadoop-cluster-docker
@@ -41,18 +49,18 @@ sudo ./start-container.sh
 start hadoop-master container...
 start hadoop-slave1 container...
 start hadoop-slave2 container...
-root@hadoop-master:~# 
+root@hadoop-master:~#
 ```
 - start 3 containers with 1 master and 2 slaves
 - you will get into the /root directory of hadoop-master container
 
-#####5. start hadoop
+#####6. start hadoop
 
 ```
 ./start-hadoop.sh
 ```
 
-#####6. run wordcount
+#####7. run wordcount
 
 ```
 ./run-wordcount.sh
@@ -95,7 +103,6 @@ sudo ./start-container.sh 5
 ```
 - use the same parameter as the step 2
 
-#####4. run hadoop cluster 
+#####4. run hadoop cluster
 
 do 5~6 like section A
-

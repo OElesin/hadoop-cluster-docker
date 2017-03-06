@@ -20,9 +20,17 @@ RUN wget http://www-eu.apache.org/dist/spark/spark-2.0.0/spark-2.0.0-bin-hadoop2
     rm spark-2.0.0-bin-hadoop2.7.tgz
 
 # set environment variable
-ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64 
-ENV HADOOP_HOME=/usr/local/hadoop 
+ENV JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+ENV HADOOP_HOME=/usr/local/hadoop
 ENV SPARK_HOME=/usr/local/spark
+ENV HADOOP_INSTALL=/usr/local/hadoop
+ENV HADOOP_MAPRED_HOME=/usr/local/hadoop
+ENV HADOOP_COMMON_HOME=/usr/local/hadoop
+ENV HADOOP_HDFS_HOME=/usr/local/hadoop
+ENV HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop
+ENV YARN_CONF_DIR=/usr/local/hadoop/etc/hadoop
+ENV YARN_HOME=/usr/local/hadoop
+
 ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin:/usr/local/spark/bin:/usr/local/spark/sbin
 
 # ssh without key
